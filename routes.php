@@ -14,4 +14,14 @@ $userController = new UserController();
 //instância controlador de usuário
 $dashboardController = new DashboardController();
 //instância controlador de dashboard
+
+//coleta a acão de URL, se não houver ação definida, usa 'login' como padrão
+$action = $_GET['action'] ?? 'login';
+//usa operador de coalescência nula (??) para definir 'login' se 'action' não estiver presente
+
+switch($action){
+    case 'login':
+        $authController->login();
+        //chama o método de login do controlador de autênticação
+}
 ?>
