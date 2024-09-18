@@ -18,6 +18,7 @@ class UserController{
         } else {
             include 'views/register.php';
         }
+        
     }
 }
 ?>
