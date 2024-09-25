@@ -1,5 +1,4 @@
 /* inserção para preenchimento de dados ao banco */
-
 CREATE DATABASE sistema_usuarios;
  
 USE sistema_usuarios;
