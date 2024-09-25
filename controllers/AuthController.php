@@ -14,13 +14,20 @@ class AuthController
             $senha = $_POST['senha'];
 
             // chama o métdodo do model para encontrar usuário pelo email
-            $user = User::findByEmail();
+            $user = User::findByEmail($email);
             
             if($user && password_verify($senha, $user['senha'])){ // Verifica se a senha corresponde a um hash
                 session_start();
                 // armazena na sessão o ID do usuário que está logado e seu perfil
                 $_SESSION['usuario_id'] = $user ['id'];
+                $_SESSION['perfil'] = $user ['perfil'];
+                
+                header('Location: index.php?action=dashboard');
+            }else{
+                echo "Email ou senha incorretos!";
             }
+        }else{
+            include 'views/login.php';
         }
     }
 }
