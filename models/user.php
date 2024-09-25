@@ -9,16 +9,16 @@ class User {
         $conn = Database:: getConnection();
 
         $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
-
-        $stmt->execute(['email'] => $email);''
+        $stmt->execute(['email' => $email]);
         // retorno de dados do usuário encontrado como um array associativo
         return $stmt->fetch(PDO::FETCH_ASSOC);
 
         // cria função que lozaliza o usuário pelo ID
+    }
         public static function find($id){
             // obtém a conexão com o banco de dados
             $conn = Database::getConnection();
-            $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = :id")
+            $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = :id");
             $stmt->execute(['id' => $id]);
 
             return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -33,5 +33,4 @@ class User {
 
         }
     }
-}
 ?>
