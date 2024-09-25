@@ -10,7 +10,7 @@ class User {
 
         $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
 
-        $stmt->execute(['email'] => $email);
+        $stmt->execute(['email'] => $email);''
         // retorno de dados do usuário encontrado como um array associativo
         return $stmt->fetch(PDO::FETCH_ASSOC);
 
