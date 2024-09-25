@@ -8,7 +8,7 @@
 <body>
     <div>
         <h2>Cadastro de usuário</h2>
-        <form method="post" action="">
+        <form method="post" action="index.php?action=register">
             <label for="">Nome:</label>
             <input type="text" name="nome"  id="nome" required>
             <label for="">E-mail:</label>
@@ -23,7 +23,7 @@
             </select>
             <button type="submit">Cadastrar</button>
         </form>
-        <a href="">Volter ao login</a>
+        <a href="index.php?action=login">Volter ao login</a>
     </div>
 </body>
 </html>
