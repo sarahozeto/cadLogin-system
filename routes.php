@@ -8,11 +8,11 @@ require 'controllers/DashboardController.php';
 //inclui o controlador de dashboard
 
 //Cria instâncias dos controladores para utilizar seus métodos
-$authController = new AuthController();
+$AuthController = new AuthController();
 //instância controlador de auteticação
-$userController = new UserController();
+$UserController = new UserController();
 //instância controlador de usuário
-$dashboardController = new DashboardController();
+// $dashboardController = new DashboardController();
 //instância controlador de dashboard
 
 //coleta a acão de URL, se não houver ação definida, usa 'login' como padrão
@@ -21,8 +21,14 @@ $action = $_GET['action'] ?? 'login';
 
 switch($action){
     case 'login':
-        $authController->login();
+        $AuthController->login();
         //chama o método de login do controlador de autênticação
-        
+       break;
+    case 'register':
+        $UserController->register();
+        break;
+    default:
+        $AuthController->login();
+        break;
 }
 ?>
