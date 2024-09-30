@@ -8,7 +8,7 @@
 [Considerações finais](#considera%C3%A7%C3%B5es-finais)  <br>
 
 
-# Cadadastro de Ecommerce - Introdução
+# Sistema de Cadastro de Login - Introdução
 ![]()<br>
 
 
@@ -25,8 +25,9 @@ Neste projetos tivemos o uso de:
 ## Funcionalidades
 Para elaborar o site, construímos três sessões para trabalhar em recursos especíificos que fariam o site funcionar da forma que deveria. Divimos essas sessões como:<br>
 
+
 ### CONTROLLERS
-![]() <br>
+![print controllers]() <br>
 Os arquivos **CONTROLLERS** - ou controladores, esses arquivos servem para a manipulção de dados e criação de novos usuários. <br><br>
 
 #### AuthController 
@@ -41,15 +42,18 @@ As linhas de código acima tratam o registro de novos usuários. Se o formulári
 ![]()<br>
 No momento da documentação deste arquivo, ele se encontra sem alterações, ou seja, vazio.<br><br>
 
+
 ### MODELS
 ![]()<br>
 Os arquivos **MODELS** - ou modelos - são responsáveis pela conexão com o banco de dados.<br>
 
 ####  Database.php
 ![]()<br>
+O código acima é responsável por gerenciar a conexão com o banco de dados, definindo uma classe database. A conexão usa o driver Mysql **(mysql:)** e as informações de host e BD para criar uma instância para se conectar ao BD. Ao final ele define o modo de erro exceções, facilitando a de puração e tratamento do erro.<br><br>
 
 #### User.php
-![]()<br><br>
+![]()<br>
+O código possui uma função para encontrar um usuário pelo e-mail de cadastro, em seguida eme obtém conexão com o banco de dados para guard-la em uma variável retornando os dados do usuário encontrado como um array associativo. Em seguida, criamos a função que cria o usuário na base de dados e localiza o usuário pelo id.<br><br>
 
 ### VIEWS
 ![]()<br>
@@ -57,16 +61,23 @@ Os arquivos **VIEWS** - ou arquivos de vizualização, são os responsáveis por
 
 #### Login.php
 ![]()<br>
+Front-end do o que o usuário vai vizualizar para realizar seu login.
 
 #### Register.php
 ![]()<br>
+Front-end do que o usuário vai vizalizar para realizar seu cadastro, tendo três opções de tipos de usuários: 
+* ADMIN
+* GESTOR
+* COLABORADOR<br>
 
 
 ### DATABASE
 ![]()<br>
+Esse código SQL cria um banco de dados e uma tabela para armazenar informações de usuários.<br><br>
 
 ### ARQUIVO DE ROTA
 ![]()<br>
+Este código define a ação a ser executada com base no parâmetro action passado na URL. Se for **login**, ele chama o método de login, e o mesmo com o método **register**, se não for nenhum dos dois, o método de login é chamado por padrão.
 
 
 ## Considerações finais
