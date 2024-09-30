@@ -1,0 +1,101 @@
+/* login.css */
+
+/* Estilo geral da página */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #0c0000);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Estilo do contêiner principal */
+main {
+    background: rgba(182, 6, 6, 0.918); /* Fundo translúcido */
+    backdrop-filter: blur(10px); /* Glassmorphism efeito de desfoque */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+}
+
+/* Estilo do formulário */
+form section {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #ccc; /* Texto do label em um tom suave de cinza */
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordas suaves */
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #fc0404;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Estilo do botão */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #000000, #830000); /* Gradiente vibrante */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Estilo do link de cadastro */
+a {
+    display: block;
+    margin-top: 15px;
+    color: #000000; /* Cor do link */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
