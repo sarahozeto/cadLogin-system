@@ -27,7 +27,7 @@ Para elaborar o site, construímos três sessões para trabalhar em recursos esp
 
 
 ### CONTROLLERS
-![print controllers]() <br>
+![print controllers](IMG/print-explorer-controllers.png) <br>
 Os arquivos **CONTROLLERS** - ou controladores, esses arquivos servem para a manipulção de dados e criação de novos usuários. <br><br>
 
 #### AuthController 
@@ -44,39 +44,38 @@ No momento da documentação deste arquivo, ele se encontra sem alterações, ou
 
 
 ### MODELS
-![]()<br>
+![](IMG/print-explorer-models.png)<br>
 Os arquivos **MODELS** - ou modelos - são responsáveis pela conexão com o banco de dados.<br>
 
 ####  Database.php
-![]()<br>
+![](IMG/print-database.php.png)<br>
 O código acima é responsável por gerenciar a conexão com o banco de dados, definindo uma classe database. A conexão usa o driver Mysql **(mysql:)** e as informações de host e BD para criar uma instância para se conectar ao BD. Ao final ele define o modo de erro exceções, facilitando a de puração e tratamento do erro.<br><br>
 
 #### User.php
-![]()<br>
+![](IMG/print-user.php.png)<br>
 O código possui uma função para encontrar um usuário pelo e-mail de cadastro, em seguida eme obtém conexão com o banco de dados para guard-la em uma variável retornando os dados do usuário encontrado como um array associativo. Em seguida, criamos a função que cria o usuário na base de dados e localiza o usuário pelo id.<br><br>
 
 ### VIEWS
-![]()<br>
+![](IMG/print-explorer-views.png)<br>
 Os arquivos **VIEWS** - ou arquivos de vizualização, são os responsáveis por aquilo que vai ser apresentado ao usuário, ou seja, a "front-end" do site.
 
 #### Login.php
-![]()<br>
+![](IMG/print-login.php.png)<br>
 Front-end do o que o usuário vai vizualizar para realizar seu login.
 
 #### Register.php
-![]()<br>
+![](IMG/print-register.php.png)<br>
 Front-end do que o usuário vai vizalizar para realizar seu cadastro, tendo três opções de tipos de usuários: 
 * ADMIN
 * GESTOR
 * COLABORADOR<br>
 
-
 ### DATABASE
-![]()<br>
+![](IMG/print-database.png)<br>
 Esse código SQL cria um banco de dados e uma tabela para armazenar informações de usuários.<br><br>
 
 ### ARQUIVO DE ROTA
-![]()<br>
+![](IMG/print-routes.png)<br>
 Este código define a ação a ser executada com base no parâmetro action passado na URL. Se for **login**, ele chama o método de login, e o mesmo com o método **register**, se não for nenhum dos dois, o método de login é chamado por padrão.
 
 
