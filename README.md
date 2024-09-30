@@ -1,19 +1,16 @@
-# Cad-Ecommerce
-![index do site](img/indexdosite.php.png)
+# Sistema de Cadastro de Login 
+![index do site]()
 
 # INDÍCE
-[Cadastro de Ecommerce - Introdução](#cadadastro-de-ecommerce---introdu%C3%A7%C3%A3o)<br>
-[Tecnologias utilizadas](#tecnologias-utilizadas)<br>
-[Funcionalidades](#funcionalidades)<br>
-[Considerações finais](#considera%C3%A7%C3%B5es-finais) <br>
+[Cadastro de Login - Introdução](#cadadastro-de-login---introdu%C3%A7%C3%A3o)<br>
+[Tecnologias utilizadas](#tecnologias-utilizadas) <br>
+[Funcionalidades](#funcionalidades) <br>
+[Considerações finais](#considera%C3%A7%C3%B5es-finais)  <br>
 
 
 # Cadadastro de Ecommerce - Introdução
 ![]()<br>
-Neste projeto foi utilizado os recurso do Mysql em conjunto com a linguagem PHP para desenvolver o banco de dados de um site que simula um carrinho de compras online, na qual é possível cadastrar novos produtos, marcas ou categorias para adicionar ao carrinho.
 
-**O que é o Mysql?** <br>
-MySQL é um sistema de gerenciamento de banco de dados relacional (RDBMS) de código aberto que utiliza a linguagem SQL (Structured Query Language) para gerenciar e manipular dados. Ele é amplamente utilizado em desenvolvimento web e aplicativos empresariais devido à sua confiabilidade, desempenho e facilidade de uso. MySQL é útil para armazenar, organizar e recuperar grandes volumes de dados, facilitando operações como consultas, inserções, atualizações e exclusões de dados em bancos de dados.
 
 ## Tecnologias utilizadas
 Neste projetos tivemos o uso de:
@@ -26,35 +23,54 @@ Neste projetos tivemos o uso de:
 * GITHUB
 
 ## Funcionalidades
-Para o site funcionar de forma devida e correta, trabalhamos com os seguintes recursos:
+Para elaborar o site, construímos três sessões para trabalhar em recursos especíificos que fariam o site funcionar da forma que deveria. Divimos essas sessões como:<br>
 
-### Incluindo o arquivo de conexão
-![include('controller/conexao.php');](img/include.png) <br>
-O comando **include** permite a inclusão de um arquivo em outro arquivo PHP. No código o arquivo **conexao.php** estabelece uma conexão com o banco de dados MySQL utilizando o usuário root, acessando o banco de dados chamado 'compra'. Depois de estabelcer a conexão com banco, ele configura o conjunto de caracteres. Se houver algum erro, o código é interrompido.
- 
-![conexao.php](img/conexao.png)
+### CONTROLLERS
+![]() <br>
+Os arquivos **CONTROLLERS** - ou controladores, esses arquivos servem para a manipulção de dados e criação de novos usuários. <br><br>
 
-### Captura do dado enviado
-![$descricao = $_POST['descricao'];](img/descricao.png)<br>
-O valor do campo descricao enviado através de um formulário HTML via método POST é capturado e armazenado na variável **$descricao**.
+#### AuthController 
+![printi AuthController](IMG/print-authcontroller.png)<br>
+O código acima lida com o processo de login de um usuário. Verifica se a requisição **HTTP** é do tipo **POST**, ou seja, se o formulário foi enviado. Utilizando o recurso **findByEmail** ele verifica se a senha e o email preenchidos no formulário são condizentes com os que foram cadastrado e, se tudo estiver correto, inicia uma sessão e redireciona o usuário. Caso contrário, exibe uma mensagem de erro.
 
-### Criação da query SQL
-![$cad_categoria = "INSERT INTO categoria(DESCRICAO) VALUES ('$descricao')";](img/criacaoquery.png)<br>
-Nessa parte é criada uma query para inserir uma nova linha nas tabelas, definindo o campo **DESCRICAO** com o valor da variável com o mesmo nome, **$descricao**.
+#### UserController
+![print UserController](IMG/print-usercontroller.png)<br>
+As linhas de código acima tratam o registro de novos usuários. Se o formulário for enviado, ele coleta os dados e os organiza uma array, em seguida ele criptografa a senha e no final chama o método **create** do model **User** para criar o novo usuário no BD.
 
-### Execução da query e verificação
-![](img/fechamentoconexao.png)<br>
-Neste bloco, executamos a query usando a função **mysqli_query()**. Se a execução for bem-sucedida, é exibida uma mensagem indicando o bom processo, caso contrário, é exibida uma mensagem de erro contendo a query que falhou.
+#### DashboardController
+![]()<br>
+No momento da documentação deste arquivo, ele se encontra sem alterações, ou seja, vazio.<br><br>
 
-### Fechamento da conexão
-![mysqli_close($mysqli);](img/closephp.png)<br>
-Por fim, encerramos a conexão com o banco de dados.
+### MODELS
+![]()<br>
+Os arquivos **MODELS** - ou modelos - são responsáveis pela conexão com o banco de dados.<br>
 
-### Banco de dados
-![banco de dados](img/bancodedados.png)
+####  Database.php
+![]()<br>
+
+#### User.php
+![]()<br><br>
+
+### VIEWS
+![]()<br>
+Os arquivos **VIEWS** - ou arquivos de vizualização, são os responsáveis por aquilo que vai ser apresentado ao usuário, ou seja, a "front-end" do site.
+
+#### Login.php
+![]()<br>
+
+#### Register.php
+![]()<br>
+
+
+### DATABASE
+![]()<br>
+
+### ARQUIVO DE ROTA
+![]()<br>
+
 
 ## Considerações finais
-Por enquanto o projeto ainda se encontra em desenvolvimento, logo, ele está incompleto e sujeito a alterações.
+Por enquanto o projeto ainda se encontra em desenvolvimento, logo, ele está incompleto e sujeito a alterações futuras.
 
 Este projeto foi desenvolvido por <strong> Sarah Ozeto </strong>, com a orientação do professor Leonardo Rocha. <br>
-![Imagem de perfil](img/fotoperfil.png)
+![Imagem de perfil]()
