@@ -6,7 +6,6 @@ require 'controllers/UserController.php';
 //inclui o controlador de usuários
 require 'controllers/DashboardController.php';
 //inclui o controlador de dashboard
-
 //Cria instâncias dos controladores para utilizar seus métodos
 $AuthController = new AuthController();
 //instância controlador de auteticação
@@ -26,6 +25,12 @@ switch($action){
        break;
     case 'register':
         $UserController->register();
+        break;
+    case 'dashboard'
+    $dashboardController->index();
+    break;
+    case 'logout';
+        $AuthController->logout();
         break;
     default:
         $AuthController->login();
