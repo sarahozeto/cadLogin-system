@@ -10,7 +10,7 @@ class DashboardController
             header('Location: index');
             exit; //garante que o script seja interrompido após o redirecionamento
         }
-        include 'viwes/dashboard.php';
+        include 'views/dashboard.php';
     }
 }
 

@@ -18,7 +18,11 @@ class UserController{
         } else {
             include 'views/register.php';
         }
-        
+    }
+    // Função para listas todos os usuários
+    public function list() {
+    $users = User::all();
+    include 'views/list_users.php';
     }
 }
 ?>
