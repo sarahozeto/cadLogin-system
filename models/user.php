@@ -9,7 +9,7 @@ class User {
         $conn = Database:: getConnection();
 
         $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email");
-        $stmt->execute(['email' => $email]);
+        $stmt->execute([":email" => $email]);
         // retorno de dados do usuário encontrado como um array associativo
         return $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -28,9 +28,15 @@ class User {
         public static function create($data){
             $conn = Database::getConnection();
             $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, perfil) VALUES (:nome, :email, :senha, :perfil)");
-
             $stmt->execute($data);
 
         }
-    }
+
+        // Função para listar todas as informações dos usuários no BD
+        public static function all(){
+            $conn = Database::getConnection();
+            $stmt = $conn->query("SELECT * FROM usuarios");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+}
 ?>
