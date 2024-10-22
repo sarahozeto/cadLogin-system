@@ -24,6 +24,13 @@ main {
     text-align: center;
 }
 
+/* Estilo do título */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
 /* Estilo do formulário */
 form section {
     margin-bottom: 20px;
@@ -40,26 +47,15 @@ label {
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 12px;
+    padding: 12px 0;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordas suaves */
-    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(68, 0, 0, 0.616); /* Bordas suaves */
+    background-color: rgba(253, 217, 217, 0.15);
     color: #fff;
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     transition: all 0.3s ease;
-}
-
-input[type="email"]::placeholder,
-input[type="password"]::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
     outline: none;
-    border: 1px solid #fc0404;
-    background-color: rgba(255, 255, 255, 0.25);
 }
 
 /* Estilo do botão */
@@ -68,28 +64,18 @@ button {
     padding: 12px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #000000, #830000); /* Gradiente vibrante */
+    background:  rgba(34, 0, 0, 0.76); /* Gradiente vibrante */
     color: white;
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.3s ease;
 }
 
-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-button:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
-
 /* Estilo do link de cadastro */
 a {
     display: block;
     margin-top: 15px;
-    color: #000000; /* Cor do link */
+    color: #ffffff; /* Cor do link */
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;

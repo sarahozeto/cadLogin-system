@@ -3,7 +3,7 @@
 /* Estilo geral da página */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #300606, #af4c4c);
+    background: linear-gradient(135deg, #1c1c1c, #0c0000);
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,7 +15,7 @@ body {
 
 /* Estilo do contêiner principal */
 div {
-    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    background: rgba(182, 6, 6, 0.918); /* Fundo translúcido */
     backdrop-filter: blur(10px); /* Glassmorphism efeito de desfoque */
     padding: 40px;
     border-radius: 12px;
@@ -62,7 +62,7 @@ select {
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 227, 227, 0.7);
 }
 
 input[type="text"]:focus,
@@ -70,26 +70,18 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 select:focus {
     outline: none;
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Estilo do botão de cadastrar */
 button {
+    width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
     border: none;
     border-radius: 8px;
+    background:  rgba(34, 0, 0, 0.76); /* Gradiente vibrante */
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
-}
-
-button:hover {
-    transform: translateY(-2px);
-    background-color: #ff4b2b;
 }
 
 button:active {
@@ -106,7 +98,6 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #ff4b2b;
-    text-decoration: underline;
+select {
+    color: rgb(29, 0, 0);
 }
