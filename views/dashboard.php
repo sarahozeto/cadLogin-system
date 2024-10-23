@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" type='text/css' media='screen' href="">
+    <link rel="stylesheet" type='text/css' media='screen' href="CSS/dashboard.css">
 </head>
  
 <body class="<?= $_SESSION['perfil']; ?>"> <!-- Define a classe com base no perfil -->
     <div class="container">
-        <h1>Bem-vindo, <?= $_SESSION['perfil']; ?>!</h1>
+        <h1>Bem-vindo, <span style="color: black;"><?= $_SESSION['perfil']; ?></span>!</h1>
         <p>Esta é a visão do perfil <?= $_SESSION['perfil']; ?>.</p>
 
         <?php if ( $_SESSION['perfil'] == 'admin'): ?>
