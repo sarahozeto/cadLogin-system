@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuários</title>
-    <link rel="stylesheet" type='text/css' media='screen' href="css/list.css"> <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" type='text/css' media='screen' href="CSS/list.css"> <!-- Link para o arquivo CSS -->
 </head>
  
 <body class="<?= $_SESSION['perfil'] ?>"> <!-- Define a classe com base no perfil do usuário -->
@@ -36,11 +36,11 @@
                     <td><?= $user['perfil']?></td>
                     <td>
                         <?php if ($_SESSION['perfil'] == 'admin' || $_SESSION['perfil'] == 'gestor'): ?>
-                        <a href="">Editar</a>
+                        <a href="" class="btn1">Editar</a>
                         <?php endif; ?>
 
                         <?php if($_SESSION['perfil'] == 'admin'):?>
-                        <a href="">Excluir</a>
+                        <a href="" class="btn2">Excluir</a>
                         <?php endif; ?>
                     </td>
                 </tr>
