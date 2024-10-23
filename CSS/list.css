@@ -1,0 +1,95 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #0c0000);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+h2{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+/* Estilo do contêiner principal */
+table {
+    background: rgba(182, 6, 6, 0.918); /* Fundo translúcido */
+    backdrop-filter: blur(10px); /* Glassmorphism efeito de desfoque */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    padding: 25px;
+    width: 350px;
+    text-align: center;
+}
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #000000; /* Cor do link */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+/* Estilo para o botão */
+.btn {
+    display: inline-block; /* Mantém o botão como bloco inline para centralização */
+    padding: 10px 20px;
+    background-color: rgba(182, 6, 6, 0.918); /* Cor de fundo (azul) */
+    color: #fff; /* Cor do texto (branco) */
+    text-align: center;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
+}
+.btn1 {
+    display: inline-block; /* Mantém o botão como bloco inline para centralização */
+    padding: 10px 20px;
+    background-color: rgba(12, 126, 8, 0.918); /* Cor de fundo (azul) */
+    color: #fff; /* Cor do texto (branco) */
+    text-align: center;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
+}
+.btn2 {
+    display: inline-block; /* Mantém o botão como bloco inline para centralização */
+    padding: 10px 20px;
+    background-color: rgba(54, 7, 7, 0.918); /* Cor de fundo (azul) */
+    color: #fff; /* Cor do texto (branco) */
+    text-align: center;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave para a mudança de cor */
+}
+.btn:hover {
+    background-color: rgba(85, 1, 1, 0.918); /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o contêiner */
+.container {
+    margin-top: 20px;
+    text-align: center; /* Centraliza todos os elementos dentro do contêiner */
+}
+
+/* Se necessário, ajuste o espaçamento da tabela */
+.styled-table {
+    margin: 0 auto; /* Centraliza a tabela se necessário */
+    border-collapse: separate; /* Separa as células da tabela */
+    border-spacing: 15px; /* Define o espaçamento entre as células */
+    width: 100%; /* Faz a tabela ocupar 100% da largura disponível */
+}
+
+.styled-table th, .styled-table td {
+    padding: 1px 15px; /* Adiciona espaçamento interno nas células */
+    text-align: left; /* Alinha o conteúdo das células à esquerda */
+}
+
+.styled-table thead th {
+    font-weight: bold; /* Negrito para o texto do cabeçalho */
+}

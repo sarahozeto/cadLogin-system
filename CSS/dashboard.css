@@ -1,0 +1,34 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #0c0000);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+div {
+    background: rgba(182, 6, 6, 0.918); /* Fundo translúcido */
+    backdrop-filter: blur(10px); /* Glassmorphism efeito de desfoque */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+}
+/* Estilo do link de cadastro */
+a {
+    display: block;
+    margin-top: 15px;
+    color: #ffffff; /* Cor do link */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
