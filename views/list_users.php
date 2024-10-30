@@ -36,11 +36,11 @@
                     <td><?= $user['perfil']?></td>
                     <td>
                         <?php if ($_SESSION['perfil'] == 'admin' || $_SESSION['perfil'] == 'gestor'): ?>
-                        <a href="" class="btn1">Editar</a>
+                        <a href="../index.php?action=edit?id=<?= $user['id'] ?>" class="btn1">Editar</a>
                         <?php endif; ?>
 
                         <?php if($_SESSION['perfil'] == 'admin'):?>
-                        <a href="" class="btn2">Excluir</a>
+                        <a href="" class="btn2" onclick= "return confirm('Tem certeza que deseja excluir este perfil?')" >Excluir</a>
                         <?php endif; ?>
                     </td>
                 </tr>

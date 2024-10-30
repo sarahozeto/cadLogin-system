@@ -9,7 +9,7 @@
 
 
 # Sistema de Cadastro de Login - Introdução
-![]()<br>
+![](IMG/print-login.css.png)<br>
 
 
 ## Tecnologias utilizadas
@@ -39,7 +39,7 @@ O código acima lida com o processo de login de um usuário. Verifica se a requi
 As linhas de código acima tratam o registro de novos usuários. Se o formulário for enviado, ele coleta os dados e os organiza uma array, em seguida ele criptografa a senha e no final chama o método **create** do model **User** para criar o novo usuário no BD.
 
 #### DashboardController
-![]()<br>
+![](IMG/print-database.png)<br>
 No momento da documentação deste arquivo, ele se encontra sem alterações, ou seja, vazio.<br><br>
 
 

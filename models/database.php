@@ -1,5 +1,5 @@
 <?php 
-// DEfine classe database, responsavél por gerenciar a conexão com o banco de dados
+// Define classe database, responsavél por gerenciar a conexão com o banco de dados
 
 class database
 {

@@ -13,7 +13,7 @@
         <h1>Bem-vindo, <span style="color: black;"><?= $_SESSION['perfil']; ?></span>!</h1>
         <p>Esta é a visão do perfil <?= $_SESSION['perfil']; ?>.</p>
 
-        <?php if ( $_SESSION['perfil'] == 'admin'): ?>
+        <?php if ($_SESSION['perfil'] == 'admin'): ?>
             <!-- Admin pode gerenciar usuários (editar e excluir) -->
             <a href="index.php?action=list" class="btn">Gerenciar Usuários (Admin)</a>
  
