@@ -41,13 +41,16 @@ class User {
 
         public static function update($id, $data){
             $conn = Database::getConnection();
-    
             // prepara a consulta SQL para atualização dos dados do usuário
             $stmt = $conn->prepare("UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id");
-
             $data['id'] = $id;
-
             $stmt->execute($data);
         }
+    // função de 'deletar' usuário pelo id
+    public static function delete($id){
+        $conn = Database::getConnection();
+        $stmt = $conn->prepare('DELETE FROM usuarios WHERE id = :id');
+        $stmt->execute(['id' => $id]);
+    }
 }
 ?>
