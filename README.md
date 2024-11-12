@@ -1,7 +1,6 @@
 # INDÍCE
 [Cadastro de Login - Introdução](#cadadastro-de-login---introdu%C3%A7%C3%A3o)<br>
 [Tecnologias utilizadas](#tecnologias-utilizadas) <br>
-
 [Considerações finais](#considera%C3%A7%C3%B5es-finais)  <br>
 
 
@@ -33,49 +32,57 @@ O código reconhece que apenas os perfil de **admin** ou **gestor** tem a permis
 ![print função delete]()<br>
 O método **delete** da classe **user** é responsável por remover o registro do usuário correspondente no banco de dados com base no ID cadastrado, após a exclusão a função redireciona o navegador para uma página onde a lista está atualizada.<br>
 
-
 #### DashboardController
-![]()<br>
-No momento da documentação deste arquivo, ele se encontra sem alterações, ou seja, vazio.<br><br>
+![print dashboardcontroller]()<br>
+O código define um classe chamada **DashboardController** para gerenciar o acesso ao painel do sistema, o dashboard, mas antes ele verifica se o usuário está autenticado, se não estiver, o usuário é redirecionado para a página de login.<br><br>
 
 
 ### MODELS
-![](IMG/print-explorer-models.png)<br>
-Os arquivos **MODELS** - ou modelos - são responsáveis pela conexão com o banco de dados.<br>
+![]()<br>
+Os arquivos de modelos são responsáveis pela conexão com o banco de dados.<br>
 
 ####  Database.php
-![](IMG/print-database.php.png)<br>
-O código acima é responsável por gerenciar a conexão com o banco de dados, definindo uma classe database. A conexão usa o driver Mysql **(mysql:)** e as informações de host e BD para criar uma instância para se conectar ao BD. Ao final ele define o modo de erro exceções, facilitando a de puração e tratamento do erro.<br><br>
+![]()<br>
+O código define uma classe chamada **Database** para gerenciar a conexão com o banco de dados, ela utiliza o padrão **Singleton**. A variável **self::$instance** armazena a instância da conexão que é compartilhada por toda a classe, por ser estática, utiliza o método **GetConnection** para retornar a conexão com o banco de dados. 
+Já a conexão é criada usando a estrutura **"$host, $db, $user, $password"**, na qual usamos para definir o tipo de banco de dados e o nome do banco.
 
 #### User.php
-![](IMG/print-user.php.png)<br>
-O código possui uma função para encontrar um usuário pelo e-mail de cadastro, em seguida eme obtém conexão com o banco de dados para guard-la em uma variável retornando os dados do usuário encontrado como um array associativo. Em seguida, criamos a função que cria o usuário na base de dados e localiza o usuário pelo id.<br><br>
+![]()<br>
+o código possui uma função para encontrar um usuário pelo email de cadastro, em seguida obtém conexão com o banco de dados para guarda-la em uma array. Em seguida, criamos a função que cria o usuário na base de dados e localiza o usuário pelo id permitindo buscar, criar, atualizar, listar e deletar usuário com a classe **User**.<br><br>
 
 
 ### VIEWS
-![](IMG/print-explorer-views.png)<br>
-Os arquivos **VIEWS** - ou arquivos de vizualização, são os responsáveis por aquilo que vai ser apresentado ao usuário, ou seja, a "front-end" do site.
+![]()<br>
+Os arquivos de vizualização são os reponsáveis por aquilo que vai ser apresentado ao usuário, ou sej,a o "front-end" do site.<br>
 
 #### Dashboard.php
-![](IMG/print-cod-dashboard.png)<br>
+![]()<br>
+Essa página personaliza o conteúdo exibido com base no perfil do usuário logado, permitindo que **admins** e **gestores** vejam links para gerenciamento de usuários enquanto colaboradores têm uma área mais restrita. Ela usa o **($_SESSION['perfil'])** para determinar o perfil.
 
 #### Login.php
-![](IMG/print-login.php.png)<br>
-Front-end do o que o usuário vai vizualizar para realizar seu login.
+![]()<br>
 
 #### Register.php
-![](IMG/print-register.php.png)<br>
+![]()<br>
 Front-end do que o usuário vai vizalizar para realizar seu cadastro, tendo três opções de tipos de usuários: 
 * ADMIN
 * GESTOR
 * COLABORADOR<br>
 
+#### EDITAR USUÁRIOS
+![]()<br>
+Esse código exibe uma página HTML para editar os dados de um usuário especifico, o formulário é enviado para o **index.php** para processar e salvar as alterações no banco de dados.<br>
+
+#### LISTAR USUÁRIOS
+![]()<br>
+Esse código exibe uma página HTML para exibir uma lista de usuário em uma tabela de HTML, com diferentes permissões de ação baseadas no perfil do usuário logado. Apenas o **admin** pode excluir um usuário, e um aviso de confirmação é exibido antes da exclusão. O layout e permissões são controlados de acordo com o perfil de cada usuário, conforme definido na sessão **($_SESSION['perfil']).**<br><br>
+
 ### DATABASE
-![](IMG/print-database.png)<br>
+![]()<br>
 Esse código SQL cria um banco de dados e uma tabela para armazenar informações de usuários.<br><br>
 
 ### ARQUIVO DE ROTA
-![](IMG/print-routes.png)<br>
+![]()<br>
 Este código define a ação a ser executada com base no parâmetro action passado na URL. Se for **login**, ele chama o método de login, e o mesmo com o método **register**, se não for nenhum dos dois, o método de login é chamado por padrão.
 
 ## Tecnologias utilizadas
@@ -89,9 +96,9 @@ Neste projetos tivemos o uso de:
 * GIT 
 * GITHUB
 
-
 ## Considerações finais
-Por enquanto o projeto ainda se encontra em desenvolvimento, logo, ele está incompleto e sujeito a alterações futuras.
+Este projet já foi finalizado, a versão que você está vizualizando é a versão final.
 
-Este projeto foi desenvolvido por <strong> Sarah Ozeto </strong>, com a orientação do professor Leonardo Rocha. <br>
-![Imagem de perfil]()
+## AUTORES
+![foto da Sarah]()
+Esse projeto foi desenvolvido por Sarah Ozeto, com a orientação do professo **Leonardo Rocha** e o auxílio dos colegas de sala **Nathan Oliveira** e **Caio Estevão.**
