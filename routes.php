@@ -30,17 +30,21 @@ switch($action){
     $dashboardController->index();
     break;
     case 'logout':
-        $AuthController->logout();
+        $authController->logout();
         break;
     case 'list':
         $userController->list();
         break;
     case 'edit':
         $id = $_GET['id'];
-        $UserController->edit($id);
+        $userController->edit($id);
+        break;
+    case 'delete':
+        $id = $_GET['id'];
+        $userController->delete($id);
         break;
     default:
-        $AuthController->login();
+        $authController->login();
         break;
 }
 ?>
