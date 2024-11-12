@@ -1,45 +1,41 @@
-# Sistema de Cadastro de Login 
-![index do site]()
-
 # INDÍCE
 [Cadastro de Login - Introdução](#cadadastro-de-login---introdu%C3%A7%C3%A3o)<br>
 [Tecnologias utilizadas](#tecnologias-utilizadas) <br>
-[Funcionalidades](#funcionalidades) <br>
+
 [Considerações finais](#considera%C3%A7%C3%B5es-finais)  <br>
 
 
 # Sistema de Cadastro de Login - Introdução
-![](IMG/print-login.css.png)<br>
+![vídeo de cadastro]()<br>
+Utilizando as tecnologias do PHP e Banco de dados (PhpMyAdmin) desenvolvemos um site de cadastro de novos usuários, na qual é possível se cadastrar com um dos três tipos de usuário: Administrador, Gestor ou Colaborador. O site possuí as funcionalidades de edição e deleção de usuário, que podem ser executadas apenas por um **administrador** ou **gestor**. Para construir o site, dividimos três sessões para trabalhar em recursos específicos. Dividimos essas sessões como:<br>
 
-
-## Tecnologias utilizadas
-Neste projetos tivemos o uso de:
-* HTML 5 
-* CSS 3
-* PHP
-* XAMPP
-* MYSQL
-* GIT 
-* GITHUB
-
-## Funcionalidades
-Para elaborar o site, construímos três sessões para trabalhar em recursos especíificos que fariam o site funcionar da forma que deveria. Divimos essas sessões como:<br>
-
-
-### CONTROLLERS
-![print controllers](IMG/print-explorer-controllers.png) <br>
-Os arquivos **CONTROLLERS** - ou controladores, esses arquivos servem para a manipulção de dados e criação de novos usuários. <br><br>
+## CONTROLLERS
+![print controllers]() <br>
+Os arquivos do controller servem para a manipulaçao de dados e criação de novos usuários.<br><br><br>
 
 #### AuthController 
-![printi AuthController](IMG/print-authcontroller.png)<br>
-O código acima lida com o processo de login de um usuário. Verifica se a requisição **HTTP** é do tipo **POST**, ou seja, se o formulário foi enviado. Utilizando o recurso **findByEmail** ele verifica se a senha e o email preenchidos no formulário são condizentes com os que foram cadastrado e, se tudo estiver correto, inicia uma sessão e redireciona o usuário. Caso contrário, exibe uma mensagem de erro.
+![printi AuthController]()<br>
+O código acima lida com o processo de login de um usuário já cadastrado. Ele verifica se a requisição **HTTP** é do tipo **POST**, ou seja, se o formulário foi enviado e utiliza o recuros **findByEmail** verifica se a senha e o email preenchidos foram cadastrados, se houver sucesso na operação o usuário é redirecionado para a tela do dashboard. A função de **logout** apenas redireciona o usuário para a página de login utilizando de um **header**.
 
 #### UserController
-![print UserController](IMG/print-usercontroller.png)<br>
-As linhas de código acima tratam o registro de novos usuários. Se o formulário for enviado, ele coleta os dados e os organiza uma array, em seguida ele criptografa a senha e no final chama o método **create** do model **User** para criar o novo usuário no BD.
+![print UserController]()<br>
+Este arquivo é responsável pelo registro de novos usuários, foi criados quatro funções públicas para realizarem tarefas distintas, sendo elas: <br>
+
+![print função create]()<br>
+Se a aquisição for do tipo **POST**, o código coleta os dados do formulário e os armazena em um array chamado **$data**, após isso ele criptografa a senha e insere um novo usuário ao banco de dados chamando o método **create** da classe **user**. ao final do cadastro o usuário é redireciona para a página de login usand um **header('Location:').<br>
+
+![print função list]()<br>
+Essa função recupera todos os usuários do banco de dados chamando o método **all** da classe **user**, que retorna para nós uma lista (array) dos usuários armazenados no banco de dados. Em seguida, o site redireciona o usuário para a página da lista.<br>
+
+![print função edit]()<br>
+O código reconhece que apenas os perfil de **admin** ou **gestor** tem a permissão de editar ou excluir um usuário, se o usuário não tiver permissão, o site exibe uma mensagem de erro, caso contrário, a função usa **User::find($id)** para buscar o usuário pelo id fornecido. Quando o formulário for enviado, o código coleta os dados e os armazena na array **$data**, em seguida o método **User::update** para atualizar o registro no banco com o ID.<br>
+
+![print função delete]()<br>
+O método **delete** da classe **user** é responsável por remover o registro do usuário correspondente no banco de dados com base no ID cadastrado, após a exclusão a função redireciona o navegador para uma página onde a lista está atualizada.<br>
+
 
 #### DashboardController
-![](IMG/print-database.png)<br>
+![]()<br>
 No momento da documentação deste arquivo, ele se encontra sem alterações, ou seja, vazio.<br><br>
 
 
@@ -55,9 +51,13 @@ O código acima é responsável por gerenciar a conexão com o banco de dados, d
 ![](IMG/print-user.php.png)<br>
 O código possui uma função para encontrar um usuário pelo e-mail de cadastro, em seguida eme obtém conexão com o banco de dados para guard-la em uma variável retornando os dados do usuário encontrado como um array associativo. Em seguida, criamos a função que cria o usuário na base de dados e localiza o usuário pelo id.<br><br>
 
+
 ### VIEWS
 ![](IMG/print-explorer-views.png)<br>
 Os arquivos **VIEWS** - ou arquivos de vizualização, são os responsáveis por aquilo que vai ser apresentado ao usuário, ou seja, a "front-end" do site.
+
+#### Dashboard.php
+![](IMG/print-cod-dashboard.png)<br>
 
 #### Login.php
 ![](IMG/print-login.php.png)<br>
@@ -77,6 +77,17 @@ Esse código SQL cria um banco de dados e uma tabela para armazenar informaçõe
 ### ARQUIVO DE ROTA
 ![](IMG/print-routes.png)<br>
 Este código define a ação a ser executada com base no parâmetro action passado na URL. Se for **login**, ele chama o método de login, e o mesmo com o método **register**, se não for nenhum dos dois, o método de login é chamado por padrão.
+
+## Tecnologias utilizadas
+Neste projetos tivemos o uso de:
+* HTML 5 
+* CSS 3
+* PHP
+* XAMPP
+* MYSQL
+* PHPMYADMIN
+* GIT 
+* GITHUB
 
 
 ## Considerações finais
