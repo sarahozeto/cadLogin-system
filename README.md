@@ -96,5 +96,5 @@ Neste projetos tivemos o uso de:
 Este projet já foi finalizado, a versão que você está vizualizando é a versão final.
 
 ## AUTORES
-![fotoperfil](https://github.com/user-attachments/assets/60ec8f26-23e8-4ec5-b3d6-ec0e59afec76) <br>
+<img src="IMG/fotoperfil.jpeg" alt="Descrição da imagem" width="300"/><br>
 Esse projeto foi desenvolvido por Sarah Ozeto, com a orientação do professo **Leonardo Rocha** e o auxílio dos colegas de sala **Nathan Oliveira** e **Caio Estevão.**
