@@ -5,7 +5,7 @@
 
 
 # Sistema de Cadastro de Login - Introdução
-![vídeo de cadastro](IMG/introvideo.gif)<br>
+![introvideo](https://github.com/user-attachments/assets/bc15acc0-ed49-44d2-814f-53abfac11165)<br>
 Utilizando as tecnologias do PHP e Banco de dados (PhpMyAdmin) desenvolvemos um site de cadastro de novos usuários, na qual é possível se cadastrar com um dos três tipos de usuário: Administrador, Gestor ou Colaborador. O site possuí as funcionalidades de edição e deleção de usuário, que podem ser executadas apenas por um **administrador** ou **gestor**. Para construir o site, dividimos três sessões para trabalhar em recursos específicos. Dividimos essas sessões como:<br>
 
 ## CONTROLLERS
