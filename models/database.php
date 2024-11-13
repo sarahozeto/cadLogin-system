@@ -1,7 +1,7 @@
 <?php 
 // Define classe database, responsavél por gerenciar a conexão com o banco de dados
 
-class database
+class Database
 {
 //Padrão Singleton, cujo objetivo é garantir que apenas uma única instância de classe seja criada durante a execução do  progama, e que essa instância seja reutilizada sempre que necessário
     private static $instance = null;
