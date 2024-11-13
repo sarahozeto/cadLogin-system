@@ -13,27 +13,26 @@ Utilizando as tecnologias do PHP e Banco de dados (PhpMyAdmin) desenvolvemos um 
 Os arquivos do controller servem para a manipulaçao de dados e criação de novos usuários.<br><br>
 
 #### AuthController 
-![printi AuthController]()<br>
+![print AuthController](IMG/print-authcontroller.png)<br>
 O código acima lida com o processo de login de um usuário já cadastrado. Ele verifica se a requisição **HTTP** é do tipo **POST**, ou seja, se o formulário foi enviado e utiliza o recuros **findByEmail** verifica se a senha e o email preenchidos foram cadastrados, se houver sucesso na operação o usuário é redirecionado para a tela do dashboard. A função de **logout** apenas redireciona o usuário para a página de login utilizando de um **header**.
 
 #### UserController
-![print UserController]()<br>
 Este arquivo é responsável pelo registro de novos usuários, foi criados quatro funções públicas para realizarem tarefas distintas, sendo elas: <br>
 
-![print função create]()<br>
+![print função register](IMG/print-register.png)<br>
 Se a aquisição for do tipo **POST**, o código coleta os dados do formulário e os armazena em um array chamado **$data**, após isso ele criptografa a senha e insere um novo usuário ao banco de dados chamando o método **create** da classe **user**. ao final do cadastro o usuário é redireciona para a página de login usand um **header('Location:').<br>
 
-![print função list]()<br>
+![print função list](IMG/print-list.png)<br>
 Essa função recupera todos os usuários do banco de dados chamando o método **all** da classe **user**, que retorna para nós uma lista (array) dos usuários armazenados no banco de dados. Em seguida, o site redireciona o usuário para a página da lista.<br>
 
-![print função edit]()<br>
+![print função edit](IMG/print-edit.png)<br>
 O código reconhece que apenas os perfil de **admin** ou **gestor** tem a permissão de editar ou excluir um usuário, se o usuário não tiver permissão, o site exibe uma mensagem de erro, caso contrário, a função usa **User::find($id)** para buscar o usuário pelo id fornecido. Quando o formulário for enviado, o código coleta os dados e os armazena na array **$data**, em seguida o método **User::update** para atualizar o registro no banco com o ID.<br>
 
-![print função delete]()<br>
+![print função delete](IMG/print-delete.png)<br>
 O método **delete** da classe **user** é responsável por remover o registro do usuário correspondente no banco de dados com base no ID cadastrado, após a exclusão a função redireciona o navegador para uma página onde a lista está atualizada.<br>
 
 #### DashboardController
-![print dashboardcontroller]()<br>
+![print dashboardcontroller](IMG/print-dashboardcontroller.png)<br>
 O código define um classe chamada **DashboardController** para gerenciar o acesso ao painel do sistema, o dashboard, mas antes ele verifica se o usuário está autenticado, se não estiver, o usuário é redirecionado para a página de login.<br><br>
 
 
@@ -42,12 +41,12 @@ O código define um classe chamada **DashboardController** para gerenciar o aces
 Os arquivos de modelos são responsáveis pela conexão com o banco de dados.<br>
 
 ####  Database.php
-![]()<br>
+![](IMG/print-database.png)<br>
 O código define uma classe chamada **Database** para gerenciar a conexão com o banco de dados, ela utiliza o padrão **Singleton**. A variável **self::$instance** armazena a instância da conexão que é compartilhada por toda a classe, por ser estática, utiliza o método **GetConnection** para retornar a conexão com o banco de dados. 
 Já a conexão é criada usando a estrutura **"$host, $db, $user, $password"**, na qual usamos para definir o tipo de banco de dados e o nome do banco.
 
 #### User.php
-![]()<br>
+![](IMG/print-userphp-models.png)<br>
 O código possuí algumas funções para estabelecer uma conexão com o banco de dados **(Database::getConnection())** e encontrar o usuário pelo email de cadastro **(FindByEmail)**, em segiuda nós listamos todas as informações do usuário para exibir no dashboard e prepara a consulta SQL para atualização dos dados do usuário.
 
 
@@ -59,30 +58,24 @@ o código possui uma função para encontrar um usuário pelo email de cadastro,
 Os arquivos de vizualização são os reponsáveis por aquilo que vai ser apresentado ao usuário, ou sej,a o "front-end" do site.<br>
 
 #### Dashboard.php
-![]()<br>
+![print tela](IMG/print-views-dashboard.png)<br>
 Essa página personaliza o conteúdo exibido com base no perfil do usuário logado, permitindo que **admins** e **gestores** vejam links para gerenciamento de usuários enquanto colaboradores têm uma área mais restrita. Ela usa o **($_SESSION['perfil'])** para determinar o perfil.
-
-#### Login.php
-![]()<br>
-
-#### Register.php
-![]()<br>
-Front-end do que o usuário vai vizalizar para realizar seu cadastro, tendo três opções de tipos de usuários: 
-* ADMIN
-* GESTOR
-* COLABORADOR<br>
+![print código](IMG/print-views-dashboard-code.png)<br>
 
 #### EDITAR USUÁRIOS
-![]()<br>
+![print da tela](IMG/print-views-editar.png)<br>
 Esse código exibe uma página HTML para editar os dados de um usuário especifico, o formulário é enviado para o **index.php** para processar e salvar as alterações no banco de dados.<br>
+![](IMG/print-views-edit-code.png)<br>
 
 #### LISTAR USUÁRIOS
-![]()<br>
+![](IMG/print-views-list.png)<br>
 Esse código exibe uma página HTML para exibir uma lista de usuário em uma tabela de HTML, com diferentes permissões de ação baseadas no perfil do usuário logado. Apenas o **admin** pode excluir um usuário, e um aviso de confirmação é exibido antes da exclusão. O layout e permissões são controlados de acordo com o perfil de cada usuário, conforme definido na sessão **($_SESSION['perfil']).**<br><br>
+![](IMG/print-views-list-code.png)<br>
 
 ## DATABASE
 ![](IMG/print-database.png)<br>
 Esse código SQL cria um banco de dados e uma tabela para armazenar informações de usuários.<br><br>
+![print do banco de dados](IMG/print-phpmyadmin.png)<br>
 
 ## ARQUIVO DE ROTA
 ![](IMG/print-routes.png)<br>
@@ -103,5 +96,5 @@ Neste projetos tivemos o uso de:
 Este projet já foi finalizado, a versão que você está vizualizando é a versão final.
 
 ## AUTORES
-![foto da Sarah]()
+![foto da Sarah](IMG/fotoperfil.jpeg)<br>
 Esse projeto foi desenvolvido por Sarah Ozeto, com a orientação do professo **Leonardo Rocha** e o auxílio dos colegas de sala **Nathan Oliveira** e **Caio Estevão.**
