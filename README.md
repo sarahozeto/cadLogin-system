@@ -5,12 +5,12 @@
 
 
 # Sistema de Cadastro de Login - Introdução
-![vídeo de cadastro]()<br>
+![vídeo de cadastro](IMG/introvideo.gif)<br>
 Utilizando as tecnologias do PHP e Banco de dados (PhpMyAdmin) desenvolvemos um site de cadastro de novos usuários, na qual é possível se cadastrar com um dos três tipos de usuário: Administrador, Gestor ou Colaborador. O site possuí as funcionalidades de edição e deleção de usuário, que podem ser executadas apenas por um **administrador** ou **gestor**. Para construir o site, dividimos três sessões para trabalhar em recursos específicos. Dividimos essas sessões como:<br>
 
 ## CONTROLLERS
 ![print controllers]() <br>
-Os arquivos do controller servem para a manipulaçao de dados e criação de novos usuários.<br><br><br>
+Os arquivos do controller servem para a manipulaçao de dados e criação de novos usuários.<br><br>
 
 #### AuthController 
 ![printi AuthController]()<br>
@@ -37,7 +37,7 @@ O método **delete** da classe **user** é responsável por remover o registro d
 O código define um classe chamada **DashboardController** para gerenciar o acesso ao painel do sistema, o dashboard, mas antes ele verifica se o usuário está autenticado, se não estiver, o usuário é redirecionado para a página de login.<br><br>
 
 
-### MODELS
+## MODELS
 ![]()<br>
 Os arquivos de modelos são responsáveis pela conexão com o banco de dados.<br>
 
@@ -51,7 +51,7 @@ Já a conexão é criada usando a estrutura **"$host, $db, $user, $password"**, 
 o código possui uma função para encontrar um usuário pelo email de cadastro, em seguida obtém conexão com o banco de dados para guarda-la em uma array. Em seguida, criamos a função que cria o usuário na base de dados e localiza o usuário pelo id permitindo buscar, criar, atualizar, listar e deletar usuário com a classe **User**.<br><br>
 
 
-### VIEWS
+## VIEWS
 ![]()<br>
 Os arquivos de vizualização são os reponsáveis por aquilo que vai ser apresentado ao usuário, ou sej,a o "front-end" do site.<br>
 
@@ -77,11 +77,11 @@ Esse código exibe uma página HTML para editar os dados de um usuário especifi
 ![]()<br>
 Esse código exibe uma página HTML para exibir uma lista de usuário em uma tabela de HTML, com diferentes permissões de ação baseadas no perfil do usuário logado. Apenas o **admin** pode excluir um usuário, e um aviso de confirmação é exibido antes da exclusão. O layout e permissões são controlados de acordo com o perfil de cada usuário, conforme definido na sessão **($_SESSION['perfil']).**<br><br>
 
-### DATABASE
+## DATABASE
 ![]()<br>
 Esse código SQL cria um banco de dados e uma tabela para armazenar informações de usuários.<br><br>
 
-### ARQUIVO DE ROTA
+## ARQUIVO DE ROTA
 ![]()<br>
 Este código define a ação a ser executada com base no parâmetro action passado na URL. Se for **login**, ele chama o método de login, e o mesmo com o método **register**, se não for nenhum dos dois, o método de login é chamado por padrão.
 
