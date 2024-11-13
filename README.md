@@ -96,5 +96,5 @@ Neste projetos tivemos o uso de:
 Este projet já foi finalizado, a versão que você está vizualizando é a versão final.
 
 ## AUTORES
-![foto da Sarah](IMG/fotoperfil.jpeg)<br>
+<img src="fotoperfil.jpeg" width="200" />
 Esse projeto foi desenvolvido por Sarah Ozeto, com a orientação do professo **Leonardo Rocha** e o auxílio dos colegas de sala **Nathan Oliveira** e **Caio Estevão.**
